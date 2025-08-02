@@ -69,6 +69,7 @@ function App() {
     setbackbutton(false);
     setforgotform(false);
     setloginform(true);
+    setbuttonvalue('Login')
 
   }
   return (
