@@ -71,23 +71,6 @@ const Signup = () => {
                 </div>
             </div>
 
-            {/* Remember Me & Forgot Password */}
-            {/* <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                    <input
-                        id="remember"
-                        name="remember"
-                        type="checkbox"
-                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded transition-all duration-200 hover:border-blue-400"
-                    />
-                    <label htmlFor="remember" className="ml-2 block text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                        Remember me
-                    </label>
-                </div>
-                <a className="text-sm text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium">
-                    Forgot password?
-                </a>
-            </div> */}
         </>
     )
 }

@@ -4,7 +4,7 @@ import SocialLoginButtons from './SocialLoginButtons';
 import Login from './Login';
 import Signup from './Signup';
 import AcceptBTN from './AcceptBTN';
-import Forgotpass from './forgotpass';
+import Email from './Email';
 import Accountlink from './Accountlink';
 
 function App() {
@@ -15,10 +15,14 @@ function App() {
   const [buttonvalue, setbuttonvalue] = useState('Login');
   const [headingvalue, setheadingvalue] = useState('ReactJS login form');
   const [headingparavalue, setheadingparavalue] = useState('Please login your account');
-  const [forgotform , setforgotform] = useState(false);
+  const [forgot , setforgotform] = useState(true);
   const [backbutton , setbackbutton] = useState(false);
   const [SocialLoginbtn , setSocialLoginbtn] = useState(true);
   const [accountlink , setaccountlink] = useState(true);
+  const [email , setemail] = useState(true);
+  const remindertoggle = () => {
+    console.log('Reminder toggle button clicked');
+  }
                        
   const SignUpLink = () => {
 
@@ -28,6 +32,7 @@ function App() {
       setloginform(false);
       setforgotform(false);
     setbackbutton(false);
+    setemail(false)
     setSocialLoginbtn(true);
       setbuttonvalue('Signup');
       setUplinkvalue('Login');
@@ -39,6 +44,7 @@ function App() {
       setsignupform(false);
       setloginform(true);
       setforgotform(false);
+      setemail(true)
     setbackbutton(false);
     setSocialLoginbtn(true);
       setbuttonvalue('Login');
@@ -85,14 +91,13 @@ function App() {
             {signupform &&
               <Signup />
             }
+            {/* Email input*/}
+            <Email emailinput={email} setemailinput={setemail}/>
             {/* Login from */}
             {loginform &&
-              <Login forgotBTN={forgotbutton}/>
+              <Login forgotBTN={forgotbutton} togglebtn={remindertoggle}/>
             }
-           {/*Forgot form*/}
-           {forgotform && 
-             <Forgotpass />
-           }
+          
              
             {/* Submit Button */}
             <AcceptBTN init={init} buttonvalue={buttonvalue} backBTN={backbutton} backbutton={backbtn} setvalue={setbackbutton}/>
