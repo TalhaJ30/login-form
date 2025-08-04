@@ -38,7 +38,7 @@ const Signup = () => {
                         name="password"
 
                         placeholder="Create password"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
+                        className="w-full px-4 py-3 outline-none border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
                         required
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -60,7 +60,7 @@ const Signup = () => {
                         name="password"
 
                         placeholder="Confirm password"
-                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
+                        className="w-full px-4 py-3 border outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
                         required
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3">
