@@ -12,7 +12,7 @@ function App() {
   const [signupform, setsignupform] = useState(false);
   const [Uplinkvalue, setUplinkvalue] = useState('Signup');
   const [Uplinkparavalue, setUplinkparavalue] = useState('Dont have an account?');
-  const [buttonvalue, setbuttonvalue] = useState('Login');
+ 
   const [headingvalue, setheadingvalue] = useState('ReactJS login form');
   const [headingparavalue, setheadingparavalue] = useState('Please login your account');
   const [forgot , setforgotform] = useState(true);
@@ -20,6 +20,11 @@ function App() {
   const [SocialLoginbtn , setSocialLoginbtn] = useState(true);
   const [accountlink , setaccountlink] = useState(true);
   const [email , setemail] = useState(true);
+  const [loginbtn , setloginbtn] = useState(true);
+  const [signupbtn , setsignupbtn] = useState(false);
+  const [resetbtn , setresetbtn] = useState(false);
+
+
   const remindertoggle = () => {
     console.log('Reminder toggle button clicked');
   }
@@ -34,7 +39,9 @@ function App() {
     setbackbutton(false);
     setemail(false)
     setSocialLoginbtn(true);
-      setbuttonvalue('Signup');
+    setsignupbtn(true);
+    setloginbtn(false);
+    setresetbtn(false)
       setUplinkvalue('Login');
       setUplinkparavalue('Already have an account?');
       setheadingvalue('ReactJS signup form');
@@ -47,7 +54,9 @@ function App() {
       setemail(true)
     setbackbutton(false);
     setSocialLoginbtn(true);
-      setbuttonvalue('Login');
+    setsignupbtn(false);
+    setloginbtn(true);
+    setresetbtn(false)
       setUplinkvalue('Signup');
       setUplinkparavalue('Dont have an account?');
       setheadingvalue('ReactJS login form');
@@ -56,6 +65,8 @@ function App() {
   }
 
   const init = () => {
+    console.log('login button clicked')
+   
   }
   const forgotbutton = () => {
     console.log('hello! guise you have clicked me');
@@ -64,7 +75,9 @@ function App() {
     setforgotform(true);
     setbackbutton(true);
     setSocialLoginbtn(false);
-    setbuttonvalue('Reset password');
+    setsignupbtn(false);
+    setloginbtn(false);
+    setresetbtn(true)
     setaccountlink(false);
 
   }
@@ -75,8 +88,16 @@ function App() {
     setbackbutton(false);
     setforgotform(false);
     setloginform(true);
-    setbuttonvalue('Login')
+    setsignupbtn(false);
+    setloginbtn(true);
+    setresetbtn(false)
 
+  }
+  const signup = () => {
+   console.log('signup button clicked')
+  }
+  const reset = () => {
+    console.log('reset button clicked')
   }
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
@@ -98,9 +119,9 @@ function App() {
               <Login forgotBTN={forgotbutton} togglebtn={remindertoggle}/>
             }
           
-             
+         
             {/* Submit Button */}
-            <AcceptBTN init={init} buttonvalue={buttonvalue} backBTN={backbutton} backbutton={backbtn} setvalue={setbackbutton}/>
+            <AcceptBTN init={init} backBTN={backbutton} backbutton={backbtn} loginbtn={loginbtn} signupbtn={signupbtn} resetbtn={resetbtn}  setresetbtn={setresetbtn}  setsignupbtn={setsignupbtn} setloginbtn={setloginbtn} signup={signup} reset={reset}/>
           </form>
 
        
