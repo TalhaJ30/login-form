@@ -65,7 +65,7 @@ function App() {
   }
 
   const init = () => {
-      alert(logininput , loginpassword)
+      console.log(logininput , loginpassword)
   }
   const forgotbutton = () => {
     console.log('hello! guise you have clicked me');
