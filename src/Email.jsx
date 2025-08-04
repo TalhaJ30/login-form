@@ -1,6 +1,6 @@
 import React from "react";
 
-const Email = ({ emailinput , loginemailinput , logininput}) => {
+const Email = ({ emailinput, setemailinput, loginemailinput, logininput }) => {
     return (
         <>
             {emailinput &&
@@ -14,8 +14,8 @@ const Email = ({ emailinput , loginemailinput , logininput}) => {
                             type="email"
                             id="email"
                             name="email"
-                            value={loginemailinput}
-                            onChange={logininput}
+                            value={logininput}
+                            onChange={loginemailinput}
                             placeholder="Enter your email address"
                             className="w-full px-4 py-3 outline-none border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
                             required
