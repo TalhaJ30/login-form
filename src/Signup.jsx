@@ -1,9 +1,9 @@
 import React from "react";
 
-const Signup = () => {
-    return(
+const Signup = ({ Signupemailinput, signupmailinput, Signuppasswordinput, signuppassinput, Signupconfirmpassinput, signupconfirminput }) => {
+    return (
         <>
-        
+
             <div className="space-y-2">
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                     Email Address
@@ -13,7 +13,8 @@ const Signup = () => {
                         type="email"
                         id="email"
                         name="email"
-
+                        value={Signupemailinput}
+                        onChange={signupmailinput}
                         placeholder="Email"
                         className="w-full px-4 py-3 border outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
                         required
@@ -36,7 +37,8 @@ const Signup = () => {
                         type="password"
                         id="password"
                         name="password"
-
+                        value={Signuppasswordinput}
+                        onChange={signuppassinput}
                         placeholder="Create password"
                         className="w-full px-4 py-3 outline-none border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
                         required
@@ -48,17 +50,18 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-              {/* Confirm Password Input */}
-              <div className="space-y-2">
+            {/* Confirm Password Input */}
+            <div className="space-y-2">
                 <label htmlFor="confirmpassword" className="block text-sm font-medium text-gray-700">
-                   Confirm Password
+                    Confirm Password
                 </label>
                 <div className="relative">
                     <input
                         type="password"
                         id="confirmpassword"
                         name="password"
-
+                        value={Signupconfirmpassinput}
+                        onChange={signupconfirminput}
                         placeholder="Confirm password"
                         className="w-full px-4 py-3 border outline-none border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-blue-300 placeholder-gray-400 text-gray-700"
                         required

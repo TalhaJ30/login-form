@@ -12,23 +12,23 @@ function App() {
   const [signupform, setsignupform] = useState(false);
   const [Uplinkvalue, setUplinkvalue] = useState('Signup');
   const [Uplinkparavalue, setUplinkparavalue] = useState('Dont have an account?');
- 
+
   const [headingvalue, setheadingvalue] = useState('ReactJS login form');
   const [headingparavalue, setheadingparavalue] = useState('Please login your account');
-  const [forgot , setforgotform] = useState(true);
-  const [backbutton , setbackbutton] = useState(false);
-  const [SocialLoginbtn , setSocialLoginbtn] = useState(true);
-  const [accountlink , setaccountlink] = useState(true);
-  const [email , setemail] = useState(true);
-  const [loginbtn , setloginbtn] = useState(true);
-  const [signupbtn , setsignupbtn] = useState(false);
-  const [resetbtn , setresetbtn] = useState(false);
+  const [forgot, setforgotform] = useState(true);
+  const [backbutton, setbackbutton] = useState(false);
+  const [SocialLoginbtn, setSocialLoginbtn] = useState(true);
+  const [accountlink, setaccountlink] = useState(true);
+  const [email, setemail] = useState(true);
+  const [loginbtn, setloginbtn] = useState(true);
+  const [signupbtn, setsignupbtn] = useState(false);
+  const [resetbtn, setresetbtn] = useState(false);
 
 
   const remindertoggle = () => {
     console.log('Reminder toggle button clicked');
   }
-                       
+
   const SignUpLink = () => {
 
     if (!signupform) {
@@ -36,12 +36,12 @@ function App() {
       setsignupform(true);
       setloginform(false);
       setforgotform(false);
-    setbackbutton(false);
-    setemail(false)
-    setSocialLoginbtn(true);
-    setsignupbtn(true);
-    setloginbtn(false);
-    setresetbtn(false)
+      setbackbutton(false);
+      setemail(false)
+      setSocialLoginbtn(true);
+      setsignupbtn(true);
+      setloginbtn(false);
+      setresetbtn(false)
       setUplinkvalue('Login');
       setUplinkparavalue('Already have an account?');
       setheadingvalue('ReactJS signup form');
@@ -52,11 +52,11 @@ function App() {
       setloginform(true);
       setforgotform(false);
       setemail(true)
-    setbackbutton(false);
-    setSocialLoginbtn(true);
-    setsignupbtn(false);
-    setloginbtn(true);
-    setresetbtn(false)
+      setbackbutton(false);
+      setSocialLoginbtn(true);
+      setsignupbtn(false);
+      setloginbtn(true);
+      setresetbtn(false)
       setUplinkvalue('Signup');
       setUplinkparavalue('Dont have an account?');
       setheadingvalue('ReactJS login form');
@@ -65,7 +65,7 @@ function App() {
   }
 
   const init = () => {
-      console.log(logininput , loginpassword)
+    console.log(logininput, loginpassword)
   }
   const forgotbutton = () => {
     console.log('hello! guise you have clicked me');
@@ -93,23 +93,36 @@ function App() {
 
   }
   const signup = () => {
-   console.log('signup button clicked')
+    console.log(Signupemailinput , Signuppasswordinput , Signupconfirmpassinput)
   }
   const reset = () => {
-    console.log('reset button clicked')
+    console.log(logininput);
+    
   }
 
-  const [loginpassword , setloginpassword] = useState();
-  const [logininput , setlogininput] = useState();
+  const [loginpassword, setloginpassword] = useState('');
+  const [logininput, setlogininput] = useState('');
   const logpasswordinput = (event) => {
 
-  setloginpassword(event.target.value);
+    setloginpassword(event.target.value);
   }
 
   const loginemailinput = (event) => {
-     setlogininput(event.target.value);
+    setlogininput(event.target.value);
   }
 
+  const [Signupemailinput, setSignupemailinput] = useState('');
+  const [Signuppasswordinput, setSignuppasswordinput] = useState('');
+  const [Signupconfirmpassinput, setSignupconfirmpassinput] = useState('');
+  const signupmailinput = (event) => {
+    setSignupemailinput(event.target.value);
+  }
+  const signuppassinput = (event) => {
+    setSignuppasswordinput(event.target.value);
+  }
+  const signupconfirminput = (event) => {
+    setSignupconfirmpassinput(event.target.value);
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
@@ -122,26 +135,26 @@ function App() {
 
             {/* Signup from */}
             {signupform &&
-              <Signup />
+              <Signup Signupemailinput={Signupemailinput} signupmailinput={signupmailinput} Signuppasswordinput={Signuppasswordinput} signuppassinput={signuppassinput} Signupconfirmpassinput={Signupconfirmpassinput} signupconfirminput={signupconfirminput} />
             }
             {/* Email input*/}
-            <Email emailinput={email} setemailinput={setemail} loginemailinput={loginemailinput}  logininput={logininput}/>
+            <Email emailinput={email} setemailinput={setemail} loginemailinput={loginemailinput} logininput={logininput} />
             {/* Login from */}
             {loginform &&
-              <Login forgotBTN={forgotbutton} togglebtn={remindertoggle} loginpassword={loginpassword} logpasswordinput={logpasswordinput}/>
+              <Login forgotBTN={forgotbutton} togglebtn={remindertoggle} loginpassword={loginpassword} logpasswordinput={logpasswordinput} />
             }
-          
-         
+
+
             {/* Submit Button */}
-            <AcceptBTN init={init} backBTN={backbutton} backbutton={backbtn} loginbtn={loginbtn} signupbtn={signupbtn} resetbtn={resetbtn}  setresetbtn={setresetbtn}  setsignupbtn={setsignupbtn} setloginbtn={setloginbtn} signup={signup} reset={reset}/>
+            <AcceptBTN init={init} backBTN={backbutton} backbutton={backbtn} loginbtn={loginbtn} signupbtn={signupbtn} resetbtn={resetbtn} setresetbtn={setresetbtn} setsignupbtn={setsignupbtn} setloginbtn={setloginbtn} signup={signup} reset={reset} />
           </form>
 
-       
+
 
           {/* Social Login Buttons */}
-          <SocialLoginButtons  SocialLogin={SocialLoginbtn} setSocialLogin={setSocialLoginbtn}/>
+          <SocialLoginButtons SocialLogin={SocialLoginbtn} setSocialLogin={setSocialLoginbtn} />
 
-          <Accountlink  Uplinkvalue={Uplinkvalue} Uplinkparavalue={Uplinkparavalue} SignUpLink={SignUpLink} accountlinkTF={accountlink} setaccountlink={setaccountlink}/>
+          <Accountlink Uplinkvalue={Uplinkvalue} Uplinkparavalue={Uplinkparavalue} SignUpLink={SignUpLink} accountlinkTF={accountlink} setaccountlink={setaccountlink} />
         </div>
       </div>
     </div>
