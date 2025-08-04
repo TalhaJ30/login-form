@@ -2,6 +2,27 @@ import React from "react";
 
 
 const SocialLoginButtons = ({ SocialLogin, }) => {
+
+    const items = [
+        {
+          icon : 'google-logo.png',
+          name : 'Google',
+        },
+        {
+            icon : 'facebook-logo.png',
+            name : 'Facebook',
+          },
+          {
+            icon : 'X-logo.png',
+            name : 'X',
+          },
+    ]
+
+  const button = (item) => {
+    console.log(`{${item.name}} This the name of the soical account`);
+    alert(`There is some issue in the ${item.name}`);
+  }
+
     return (
         <>
             {SocialLogin &&
@@ -17,18 +38,13 @@ const SocialLoginButtons = ({ SocialLogin, }) => {
                         </div>
                     </div>
                     <div className="mt-3 flex justify-center items-center  flex-wrap">
-                        <button className="flex ml-2 cursor-pointer mr-2 mt-3 justify-center py-2 px-4 border border-gray-200 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 transform hover:scale-105">
-                            <img src="download.png" alt="Edge" className="h-6 w-6" />
-                            <span className="ml-2 text-xl" style={{ fontSize: "17px" }}>Google</span>
+                        {items.map((item , index) => <div key={index}>
+                            <button className="flex ml-2 cursor-pointer mr-2 mt-3 justify-center py-2 px-4 border border-gray-200 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 transform hover:scale-105" onClick={() => button(item)}>
+                            <img src={item.icon} alt={'Edge'} className="h-6 w-6" />
+                            <span className="ml-2 text-xl" style={{ fontSize: "17px" }}>{item.name}</span>
                         </button>
-                        <button className="inline-flex ml-2 mr-2 mt-3 cursor-pointer justify-center py-2 px-4 border border-gray-200 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 transform hover:scale-105">
-                            <img src="download (2).png" alt="Edge" className="h-6 w-6" />
-                            <span className="ml-2 " style={{ fontSize: "17px" }}>Facebook</span>
-                        </button>
-                        <button className="inline-flex ml-2 mr-2 mt-3 justify-center cursor-pointer py-2 px-4 border border-gray-200 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 transform hover:scale-105">
-                            <img src="download (1).png" alt="Edge" className="h-6 w-6" />
-                            <span className="ml-2 " style={{ fontSize: "17px" }}>X</span>
-                        </button>
+                        </div>)}
+                       
                     </div>
                 </div>
             }

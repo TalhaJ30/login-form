@@ -65,8 +65,7 @@ function App() {
   }
 
   const init = () => {
-    console.log('login button clicked')
-   
+      alert(logininput , loginpassword)
   }
   const forgotbutton = () => {
     console.log('hello! guise you have clicked me');
@@ -99,6 +98,19 @@ function App() {
   const reset = () => {
     console.log('reset button clicked')
   }
+
+  const [loginpassword , setloginpassword] = useState();
+  const [logininput , setlogininput] = useState();
+  const logpasswordinput = (event) => {
+
+  setloginpassword(event.target.value);
+  }
+
+  const loginemailinput = (event) => {
+     setlogininput(event.target.value);
+  }
+
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
@@ -113,10 +125,10 @@ function App() {
               <Signup />
             }
             {/* Email input*/}
-            <Email emailinput={email} setemailinput={setemail}/>
+            <Email emailinput={email} setemailinput={setemail} loginemailinput={loginemailinput}  logininput={logininput}/>
             {/* Login from */}
             {loginform &&
-              <Login forgotBTN={forgotbutton} togglebtn={remindertoggle}/>
+              <Login forgotBTN={forgotbutton} togglebtn={remindertoggle} loginpassword={loginpassword} logpasswordinput={logpasswordinput}/>
             }
           
          
