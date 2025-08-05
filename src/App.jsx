@@ -267,8 +267,6 @@ function App() {
             <AcceptBTN init={init} backBTN={backbutton} backbutton={backbtn} loginbtn={loginbtn} signupbtn={signupbtn} resetbtn={resetbtn} setresetbtn={setresetbtn} setsignupbtn={setsignupbtn} setloginbtn={setloginbtn} signup={signup} reset={reset} loginemailinput={loginemailinput} />
           </div>
 
-
-
          {/* Social Login Buttons */}
           <SocialLoginButtons SocialLogin={SocialLoginbtn} setSocialLogin={setSocialLoginbtn} />
 

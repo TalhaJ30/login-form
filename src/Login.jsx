@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = ({ forgotBTN , togglebtn , loginpassword , logpasswordinput}) => {
+const Login = ({ forgotBTN , togglebtn , loginpassword , logpasswordinput , inputalertstyle , loginpasswordstyle}) => {
     return (
         <>
             {/* Password Input */}
