@@ -1,13 +1,13 @@
 import React from "react";
 
-const AcceptBTN = ({ init, backBTN, backbutton, loginbtn, signupbtn, resetbtn, setresetbtn, setsignupbtn, setloginbtn , signup , reset }) => {
+const AcceptBTN = ({ init, backBTN, backbutton, loginbtn, signupbtn, resetbtn, setresetbtn, setsignupbtn, setloginbtn , signup , reset , }) => {
     return (
         <>
             {loginbtn &&
                 <button
                     onClick={init}
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+                    className={`w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl `}
                 >
                     Login
                 </button>

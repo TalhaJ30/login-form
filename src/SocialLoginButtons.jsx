@@ -20,7 +20,7 @@ const SocialLoginButtons = ({ SocialLogin, }) => {
 
   const button = (item) => {
     console.log(`{${item.name}} This the name of the soical account`);
-    alert(`There is some issue in the ${item.name}`);
+    alert(`it is just the damo of ${item.name}`);
   }
 
     return (
