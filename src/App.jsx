@@ -90,7 +90,10 @@ function App() {
       setloginpasswordstyle('border-blue-500');
       setsignupinputalert(false)
     }
-
+   setTimeout(() => {
+    setlogininput('');
+    setloginpassword('')
+   }, 300);
   }
   const forgotbutton = () => {
     console.log('hello! guise you have clicked me');
@@ -178,12 +181,19 @@ function App() {
       if (Signuppasswordinput === Signupconfirmpassinput) {
         console.log('Passwords match');
         setsignupalert('border-blue-500');
+        setTimeout(() => {
+          setSignupemailinput('');
+          setSignuppasswordinput('');
+          setSignupconfirmpassinput('');
+         
+         }, 300);
       } else {
         console.log('Passwords do not match');
         setsignupalert('border-red-500');
         hasError = true;
         errorMessage = 'Passwords do not match';
       }
+     
     }
 
     // Set error state and message
@@ -196,6 +206,7 @@ function App() {
       console.log('Signup validation passed');
       // Here you can add the actual signup logic
     }
+   
   }
   const reset = () => {
     console.log(`{your password has reset by this email} = ${logininput}`);
@@ -208,7 +219,9 @@ function App() {
       setsignupalertvalue('')
       setBorderColor('border-blue-500');
     }
-
+    setTimeout(() => {
+      setlogininput('');
+     }, 300);
   }
 
   const [loginpassword, setloginpassword] = useState('');
@@ -251,7 +264,7 @@ function App() {
         <Heading mainheading={headingvalue} headingpara={headingparavalue} />
         {/* Form Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-          <form className="space-y-6">
+          <div className="space-y-6">
 
             {/* Signup from */}
             {signupform &&
@@ -267,9 +280,9 @@ function App() {
             {signupinputalert && <Alert signupalertvalue={signupalertvalue} setsignupalertvalue={setsignupalertvalue} signupinputalert={signupinputalert} setsignupinputalert={setsignupinputalert} />}
 
 
-            {/* Submit Button */}
+            {/* Submit Button */}  
             <AcceptBTN init={init} backBTN={backbutton} backbutton={backbtn} loginbtn={loginbtn} signupbtn={signupbtn} resetbtn={resetbtn} setresetbtn={setresetbtn} setsignupbtn={setsignupbtn} setloginbtn={setloginbtn} signup={signup} reset={reset} loginemailinput={loginemailinput} />
-          </form>
+          </div>
 
          {/* Social Login Buttons */}
           <SocialLoginButtons SocialLogin={SocialLoginbtn} setSocialLogin={setSocialLoginbtn} />
