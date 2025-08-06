@@ -251,7 +251,7 @@ function App() {
         <Heading mainheading={headingvalue} headingpara={headingparavalue} />
         {/* Form Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-          <div className="space-y-6">
+          <form className="space-y-6">
 
             {/* Signup from */}
             {signupform &&
@@ -269,7 +269,7 @@ function App() {
 
             {/* Submit Button */}
             <AcceptBTN init={init} backBTN={backbutton} backbutton={backbtn} loginbtn={loginbtn} signupbtn={signupbtn} resetbtn={resetbtn} setresetbtn={setresetbtn} setsignupbtn={setsignupbtn} setloginbtn={setloginbtn} signup={signup} reset={reset} loginemailinput={loginemailinput} />
-          </div>
+          </form>
 
          {/* Social Login Buttons */}
           <SocialLoginButtons SocialLogin={SocialLoginbtn} setSocialLogin={setSocialLoginbtn} />
