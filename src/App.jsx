@@ -105,6 +105,8 @@ function App() {
     setaccountlink(false);
     setsignupinputalert(false);
     setBorderColor('border-blue-500');
+    setheadingvalue('ReactJS forgot password form');
+    setheadingparavalue('Please reset your email password')
   }
   const backbtn = () => {
     console.log('you have successfully mover to your login page');
@@ -116,7 +118,9 @@ function App() {
     setsignupbtn(false);
     setloginbtn(true);
     setresetbtn(false)
-    setsignupinputalert(false)
+    setsignupinputalert(false);
+    setBorderColor('border-blue-500');
+    setloginpasswordstyle('border-blue-500')
 
   }
   const signup = () => {
